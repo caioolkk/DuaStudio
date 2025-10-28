@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,19 +9,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!-- Seletor de idioma -->
-  <div class="language-selector">
-    <button class="lang-btn active" data-lang="pt">PT</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="es">ES</button>
-  </div>
 
+<body>
+
+  <!-- Header / Navegação -->
   <!-- Header / Navegação -->
   <header>
     <div class="container">
       <h2>Duo Studio</h2>
-      <nav>
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
         <ul>
           <li><a href="#home" class="nav-link" data-key="home">Início</a></li>
           <li><a href="#about" class="nav-link" data-key="about">Sobre Nós</a></li>
@@ -29,6 +31,12 @@
           <li><a href="#contact" class="nav-link" data-key="contact">Contato</a></li>
         </ul>
       </nav>
+      <!-- Seletor de idioma dentro do menu (só visível em mobile) -->
+      <div class="mobile-language-selector">
+        <button class="lang-btn active" data-lang="pt">PT</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
     </div>
   </header>
 
@@ -66,20 +74,46 @@
     </div>
   </section>
 
-  <!-- Trabalhos -->
-  <section id="work" class="section">
-    <div class="container">
-      <h2 data-key="work_title">Nossos Trabalhos</h2>
-      <p data-key="work_text">Confira alguns dos projetos que desenvolvemos com dedicação e excelência.</p>
-      <div class="work-grid">
-        <div class="work-item"><a href="https://meninao-cabellos.vercel.app/"><img src=".image/meninaocabellos" alt="meninaocabellos"></a></div>
-        <div class="work-item"><span data-key="project">Projeto 2</span></div>
-        <div class="work-item"><span data-key="project">Projeto 3</span></div>
-        <div class="work-item"><span data-key="project">Projeto 4</span></div>
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide">
+        <img src="./image/projeto1.jpg" alt="Meninão Cabellos" />
+        <div class="overlay">
+          <a href="https://meninao-cabellos.vercel.app/" target="_blank" class="site-button">Ir pro site</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./image/projeto2.png" alt="Projeto 2" />
+        <div class="overlay">
+          <a href="https://arena-hub-one.vercel.app/" class="site-button">Ir pro site</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./image/projeto3.png" alt="Projeto 3" />
+        <div class="overlay">
+          <a href="https://salao-rosa.vercel.app/" class="site-button">Ir pro site</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./image/projeto4.png" alt="Projeto 4" />
+        <div class="overlay">
+          <a href="#" class="site-button">Ir pro site</a>
+        </div>
       </div>
     </div>
-  </section>
 
+    <!-- Setas funcionais com JS -->
+    <button class="carousel-arrow prev" aria-label="Projeto anterior">&#8249;</button>
+    <button class="carousel-arrow next" aria-label="Próximo projeto">&#8250;</button>
+
+    <!-- Indicadores (opcional) -->
+    <div class="indicators">
+      <span class="indicator active" data-index="0"></span>
+      <span class="indicator" data-index="1"></span>
+      <span class="indicator" data-index="2"></span>
+      <span class="indicator" data-index="3"></span>
+    </div>
+  </div>
   <!-- Fundadores -->
   <section id="founders" class="section">
     <div class="container">
@@ -88,14 +122,18 @@
         <div class="founder-card">
           <img src="image/caio.png" alt="Caio Macário" />
           <h3>Caio Macário</h3>
-          <p data-key="caio_desc">Programador apaixonado por tecnologia e soluções inovadoras. Especialista em desenvolvimento web e automações.</p>
-          <a href="https://www.instagram.com/caio._ip/" target="_blank" class="social-link"><i class="fab fa-instagram"></i> @caio._ip - CAIO MACARIO</a>
+          <p data-key="caio_desc">Programador apaixonado por tecnologia e soluções inovadoras. Especialista em
+            desenvolvimento web e automações.</p>
+          <a href="https://www.instagram.com/caio._ip/" target="_blank" class="social-link"><i
+              class="fab fa-instagram"></i> @caio._ip - CAIO MACARIO</a>
         </div>
         <div class="founder-card">
           <img src="image/vinicius.png" alt="Vinícius" />
           <h3>Vinícius</h3>
-          <p data-key="vinicius_desc">Designer e desenvolvedor com olhar estratégico para negócios digitais. Focado em experiência do usuário e estética moderna.</p>
-          <a href="https://www.instagram.com/vini.zl01/" target="_blank" class="social-link"><i class="fab fa-instagram"></i> @vini.zl01 - VINICIUS VICENTE</a>
+          <p data-key="vinicius_desc">Designer e desenvolvedor com olhar estratégico para negócios digitais. Focado em
+            experiência do usuário e estética moderna.</p>
+          <a href="https://www.instagram.com/vini.zl01/" target="_blank" class="social-link"><i
+              class="fab fa-instagram"></i> @vini.zl01 - VINICIUS VICENTE</a>
         </div>
       </div>
     </div>
@@ -121,4 +159,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

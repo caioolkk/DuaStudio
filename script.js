@@ -99,13 +99,13 @@ function updateText(lang) {
     }
   });
 
-  // Atualiza botões de idioma
+  // Atualiza TODOS os botões de idioma (inclusive os do menu mobile)
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 }
 
-// Troca de idioma
+// Aplica o listener a TODOS os botões .lang-btn (delegação não é necessária aqui)
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     updateText(btn.dataset.lang);
@@ -124,8 +124,62 @@ document.getElementById('whatsapp-form').addEventListener('submit', function(e) 
   );
 
   // Substitua pelo número real da agência (com código do país)
-  const phoneNumber = '55seunumeroaqui'; // ←←← ALTERE AQUI!
+  const phoneNumber = '5581991945676'; 
   window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+});
+
+// Carousel de projetos
+const slidesContainer = document.querySelector('.slides');
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.carousel-arrow.prev');
+const nextBtn = document.querySelector('.carousel-arrow.next');
+const indicators = document.querySelectorAll('.indicator');
+
+let currentIndex = 0;
+const totalSlides = slides.length;
+
+function updateCarousel() {
+  slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  
+  // Atualiza indicadores
+  indicators.forEach((ind, i) => {
+    ind.classList.toggle('active', i === currentIndex);
+  });
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateCarousel();
+});
+
+// Clique nos indicadores
+indicators.forEach((ind, i) => {
+  ind.addEventListener('click', () => {
+    currentIndex = i;
+    updateCarousel();
+  });
+});
+
+// Menu Hamburger
+const hamburger = document.querySelector('.hamburger');
+const mainNav = document.querySelector('.main-nav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mainNav.classList.toggle('active');
+});
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.main-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mainNav.classList.remove('active');
+  });
 });
 
 // Inicializa em português
