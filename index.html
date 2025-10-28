@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duo Studio – Desenvolvimento Web & Apps</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Seletor de idioma -->
+  <div class="language-selector">
+    <button class="lang-btn active" data-lang="pt">PT</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="es">ES</button>
+  </div>
+
+  <!-- Header / Navegação -->
+  <header>
+    <div class="container">
+      <h2>Duo Studio</h2>
+      <nav>
+        <ul>
+          <li><a href="#home" class="nav-link" data-key="home">Início</a></li>
+          <li><a href="#about" class="nav-link" data-key="about">Sobre Nós</a></li>
+          <li><a href="#work" class="nav-link" data-key="work">Trabalhos</a></li>
+          <li><a href="#founders" class="nav-link" data-key="founders">Fundadores</a></li>
+          <li><a href="#contact" class="nav-link" data-key="contact">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1 data-key="hero_title">Transformamos ideias em soluções digitais</h1>
+      <p data-key="hero_subtitle">Desenvolvimento de sites, softwares, apps e automações com tecnologia de ponta.</p>
+      <a href="#contact" class="cta-button" data-key="cta">Vamos conversar?</a>
+    </div>
+  </section>
+
+  <!-- Sobre Nós -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 data-key="about_title">Sobre a Duo Studio</h2>
+      <p data-key="about_text">
+        Somos uma agência de tecnologia focada em entregar soluções personalizadas, modernas e eficientes.
+        Combinamos design intuitivo, código limpo e performance para garantir o sucesso do seu projeto digital.
+      </p>
+      <div class="reasons">
+        <div class="reason-card">
+          <h3 data-key="reason1">Tecnologia de Ponta</h3>
+          <p data-key="reason1_desc">Usamos as melhores ferramentas e linguagens do mercado.</p>
+        </div>
+        <div class="reason-card">
+          <h3 data-key="reason2">Foco no Cliente</h3>
+          <p data-key="reason2_desc">Entregamos exatamente o que você precisa, sem surpresas.</p>
+        </div>
+        <div class="reason-card">
+          <h3 data-key="reason3">Resultados Reais</h3>
+          <p data-key="reason3_desc">Nossos projetos geram valor e crescimento para seu negócio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trabalhos -->
+  <section id="work" class="section">
+    <div class="container">
+      <h2 data-key="work_title">Nossos Trabalhos</h2>
+      <p data-key="work_text">Confira alguns dos projetos que desenvolvemos com dedicação e excelência.</p>
+      <div class="work-grid">
+        <div class="work-item"><a href="https://meninao-cabellos.vercel.app/"><img src=".image/meninaocabellos" alt="meninaocabellos"></a></div>
+        <div class="work-item"><span data-key="project">Projeto 2</span></div>
+        <div class="work-item"><span data-key="project">Projeto 3</span></div>
+        <div class="work-item"><span data-key="project">Projeto 4</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fundadores -->
+  <section id="founders" class="section">
+    <div class="container">
+      <h2 data-key="founders_title">Nossos Fundadores</h2>
+      <div class="founders-grid">
+        <div class="founder-card">
+          <img src="image/caio.png" alt="Caio Macário" />
+          <h3>Caio Macário</h3>
+          <p data-key="caio_desc">Programador apaixonado por tecnologia e soluções inovadoras. Especialista em desenvolvimento web e automações.</p>
+          <a href="https://www.instagram.com/caio._ip/" target="_blank" class="social-link"><i class="fab fa-instagram"></i> @caio._ip - CAIO MACARIO</a>
+        </div>
+        <div class="founder-card">
+          <img src="image/vinicius.png" alt="Vinícius" />
+          <h3>Vinícius</h3>
+          <p data-key="vinicius_desc">Designer e desenvolvedor com olhar estratégico para negócios digitais. Focado em experiência do usuário e estética moderna.</p>
+          <a href="https://www.instagram.com/vini.zl01/" target="_blank" class="social-link"><i class="fab fa-instagram"></i> @vini.zl01 - VINICIUS VICENTE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <h2 data-key="contact_title">Entre em Contato</h2>
+      <p data-key="contact_text">Preencha o formulário e enviaremos sua mensagem diretamente via WhatsApp.</p>
+      <form id="whatsapp-form">
+        <input type="text" id="user-name" placeholder="Seu nome" required />
+        <textarea id="user-message" placeholder="Descreva seu projeto..." required></textarea>
+        <button type="submit" class="cta-button" data-key="send">Enviar via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/81991945676" target="_blank" class="whatsapp-float" id="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
